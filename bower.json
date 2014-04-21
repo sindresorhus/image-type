@@ -1,0 +1,37 @@
+{
+  "name": "image-type",
+  "description": "Detect the image type of a Buffer/Uint8Array",
+  "license": "MIT",
+  "main": "browser.js",
+  "authors": [
+    {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "http://sindresorhus.com"
+    }
+  ],
+  "keywords": [
+    "jpg",
+    "jpeg",
+    "image",
+    "img",
+    "pic",
+    "picture",
+    "photo",
+    "type",
+    "detect",
+    "check",
+    "is",
+    "exif",
+    "binary",
+    "buffer",
+    "uint8array"
+  ],
+  "ignore": [
+    ".*",
+    "test.js",
+    "component.json",
+    "package.json",
+    "fixture*"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "image-type",
+  "version": "0.0.0",
+  "description": "Detect the image type of a Buffer/Uint8Array",
+  "license": "MIT",
+  "repository": "sindresorhus/image-type",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "browser": "browserify -s $npm_package_name -o browser.js ."
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "jpg",
+    "jpeg",
+    "image",
+    "img",
+    "pic",
+    "picture",
+    "photo",
+    "type",
+    "detect",
+    "check",
+    "is",
+    "exif",
+    "binary",
+    "buffer",
+    "uint8array",
+    "cli",
+    "bin"
+  ],
+  "dependencies": {
+    "is-bmp": "^0.1.0",
+    "is-gif": "^0.1.0",
+    "is-jpg": "^0.1.0",
+    "is-jxr": "^0.1.0",
+    "is-png": "^0.1.0",
+    "is-psd": "^0.1.0",
+    "is-tif": "^0.1.0",
+    "is-webp": "^0.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^3.0.0",
+    "mocha": "*",
+    "read-chunk": "^0.1.0"
+  }
+}
