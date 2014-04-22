@@ -1,40 +1,20 @@
 'use strict';
+var dependencies = require('./package.json').dependencies;
+
 module.exports = function (buf) {
+	var ext;
+
 	if (!buf || buf.length < 12) {
 		return false;
 	}
 
-	if (require('is-jpg')(buf)) {
-		return 'jpg';
-	}
+	Object.keys(dependencies).filter(function (dep) {
+		return dep.indexOf('is-') !== -1;
+	}).forEach(function (dep) {
+		if (require(dep)(buf)) {
+			ext = dep.replace('is-', '');
+		}
+	});
 
-	if (require('is-png')(buf)) {
-		return 'png';
-	}
-
-	if (require('is-gif')(buf)) {
-		return 'gif';
-	}
-
-	if (require('is-webp')(buf)) {
-		return 'webp';
-	}
-
-	if (require('is-tif')(buf)) {
-		return 'tif';
-	}
-
-	if (require('is-bmp')(buf)) {
-		return 'bmp';
-	}
-
-	if (require('is-jxr')(buf)) {
-		return 'jxr';
-	}
-
-	if (require('is-psd')(buf)) {
-		return 'psd';
-	}
-
-	return false;
+	return ext ? ext : false;
 };
