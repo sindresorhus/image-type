@@ -4,6 +4,9 @@
   "description": "Detect the image type of a Buffer/Uint8Array",
   "license": "MIT",
   "repository": "sindresorhus/image-type",
+  "bin": {
+    "image-type": "cli.js"
+  },
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
@@ -17,7 +20,8 @@
     "browser": "browserify -s $npm_package_name -o browser.js ."
   },
   "files": [
-    "index.js"
+    "index.js",
+    "cli.js"
   ],
   "keywords": [
     "jpg",
