@@ -50,11 +50,11 @@
     "is-png": "^0.1.0",
     "is-psd": "^0.1.0",
     "is-tif": "^0.1.0",
-    "is-webp": "^0.1.0"
+    "is-webp": "^0.1.0",
+    "read-chunk": "^0.1.0"
   },
   "devDependencies": {
     "browserify": "^3.0.0",
-    "mocha": "*",
-    "read-chunk": "^0.1.0"
+    "mocha": "*"
   }
 }
