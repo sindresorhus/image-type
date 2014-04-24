@@ -1,15 +1,23 @@
 {
   "name": "image-type",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Detect the image type of a Buffer/Uint8Array",
   "license": "MIT",
   "repo": "sindresorhus/image-type",
   "scripts": [
     "index.js"
   ],
+  "dependencies": {
+    "sindresorhus/is-bmp": "^0.1.0",
+    "sindresorhus/is-gif": "^0.1.0",
+    "sindresorhus/is-jpg": "^0.1.0",
+    "sindresorhus/is-jxr": "^0.1.0",
+    "sindresorhus/is-png": "^0.1.0",
+    "sindresorhus/is-psd": "^0.1.0",
+    "sindresorhus/is-tif": "^0.1.0",
+    "sindresorhus/is-webp": "^0.1.0"
+  },
   "keywords": [
-    "jpg",
-    "jpeg",
     "image",
     "img",
     "pic",
@@ -22,6 +30,17 @@
     "exif",
     "binary",
     "buffer",
-    "uint8array"
+    "uint8array",
+    "cli",
+    "bin",
+    "png",
+    "jpg",
+    "jpeg",
+    "gif",
+    "webp",
+    "tif",
+    "bmp",
+    "jxr",
+    "psd"
   ]
 }

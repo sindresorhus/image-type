@@ -55,9 +55,7 @@ Returns: [`png`](https://github.com/sindresorhus/is-png), [`jpg`](https://github
 
 #### buffer
 
-Type: `buffer`, `uint8array`
-
-Accepts a Buffer (Node.js) or Uint8Array.
+Type: `buffer` *(Node.js)*, `uint8array`
 
 It only needs the first 12 bytes.
 

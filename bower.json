@@ -11,8 +11,6 @@
     }
   ],
   "keywords": [
-    "jpg",
-    "jpeg",
     "image",
     "img",
     "pic",
@@ -25,7 +23,16 @@
     "exif",
     "binary",
     "buffer",
-    "uint8array"
+    "uint8array",
+    "png",
+    "jpg",
+    "jpeg",
+    "gif",
+    "webp",
+    "tif",
+    "bmp",
+    "jxr",
+    "psd"
   ],
   "ignore": [
     ".*",
