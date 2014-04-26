@@ -23,7 +23,7 @@ function init(data) {
 	if (type) {
 		console.log(type);
 	} else {
-		console.error('Not a recognized image');
+		console.error('Unrecognized image type');
 		process.exit(65);
 	}
 }

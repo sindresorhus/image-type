@@ -2,6 +2,8 @@
 
 > Detect the image type of a Buffer/Uint8Array
 
+See the [file-type](https://github.com/sindresorhus/file-type) module for more file types.
+
 
 ## Install
 
