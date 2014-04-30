@@ -55,6 +55,8 @@ xhr.send();
 
 Returns: [`png`](https://github.com/sindresorhus/is-png), [`jpg`](https://github.com/sindresorhus/is-jpg), [`gif`](https://github.com/sindresorhus/is-gif), [`webp`](https://github.com/sindresorhus/is-webp), [`tif`](https://github.com/sindresorhus/is-tif), [`bmp`](https://github.com/sindresorhus/is-bmp), [`jxr`](https://github.com/sindresorhus/is-jxr), [`psd`](https://github.com/sindresorhus/is-psd), `false`
 
+*SVG isn't included as it requires the whole file to be read, but you can get it [here](https://github.com/sindresorhus/is-svg).*
+
 #### buffer
 
 Type: `buffer` *(Node.js)*, `uint8array`
