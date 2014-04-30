@@ -1,9 +1,9 @@
 {
   "name": "image-type",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Detect the image type of a Buffer/Uint8Array",
   "license": "MIT",
-  "repo": "sindresorhus/image-type",
+  "repository": "sindresorhus/image-type",
   "scripts": [
     "index.js"
   ],
