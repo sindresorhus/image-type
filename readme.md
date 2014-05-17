@@ -33,6 +33,22 @@ imageType(buffer);
 //=> png
 ```
 
+or from a remote location:
+
+```js
+var http = require('http');
+var imageType = require('image-type');
+var url = 'http://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif';
+
+http.get(url, function (res) {
+	res.once('data', function (chunk) {
+		res.destroy();
+		console.log(imageType(chunk));
+		//=> gif
+	});
+});
+```
+
 ##### Browser
 
 ```js
