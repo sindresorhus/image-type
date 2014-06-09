@@ -47,7 +47,8 @@
     "tif",
     "bmp",
     "jxr",
-    "psd"
+    "psd",
+    "mime"
   ],
   "dependencies": {
     "is-bmp": "^0.1.0",

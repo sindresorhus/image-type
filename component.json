@@ -41,6 +41,7 @@
     "tif",
     "bmp",
     "jxr",
-    "psd"
+    "psd",
+    "mime"
   ]
 }

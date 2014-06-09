@@ -32,7 +32,8 @@
     "tif",
     "bmp",
     "jxr",
-    "psd"
+    "psd",
+    "mime"
   ],
   "ignore": [
     ".*",
