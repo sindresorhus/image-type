@@ -1,7 +1,7 @@
 'use strict';
 var assert = require('assert');
 var readChunk = require('read-chunk');
-var imageType = require('./index');
+var imageType = require('./');
 
 function check(filename) {
 	return imageType(readChunk.sync(filename, 0, 12));

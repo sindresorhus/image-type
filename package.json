@@ -4,20 +4,19 @@
   "description": "Detect the image type of a Buffer/Uint8Array",
   "license": "MIT",
   "repository": "sindresorhus/image-type",
-  "bin": {
-    "image-type": "cli.js"
-  },
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "http://sindresorhus.com"
   },
+  "bin": {
+    "image-type": "cli.js"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha",
-    "browser": "browserify -s $npm_package_name -o browser.js ."
+    "test": "mocha"
   },
   "files": [
     "index.js",
@@ -51,18 +50,17 @@
     "mime"
   ],
   "dependencies": {
-    "is-bmp": "^0.1.0",
-    "is-gif": "^0.1.0",
-    "is-jpg": "^0.1.0",
-    "is-jxr": "^0.1.0",
-    "is-png": "^0.1.0",
-    "is-psd": "^0.1.0",
-    "is-tif": "^0.1.0",
-    "is-webp": "^0.1.0",
-    "read-chunk": "^0.1.0"
+    "is-bmp": "^1.0.0",
+    "is-gif": "^1.0.0",
+    "is-jpg": "^1.0.0",
+    "is-jxr": "^1.0.0",
+    "is-png": "^1.0.0",
+    "is-psd": "^1.0.0",
+    "is-tif": "^1.0.0",
+    "is-webp": "^1.0.0"
   },
   "devDependencies": {
-    "browserify": "^3.0.0",
-    "mocha": "*"
+    "mocha": "*",
+    "read-chunk": "^1.0.0"
   }
 }

@@ -11,14 +11,6 @@ See the [file-type](https://github.com/sindresorhus/file-type) module for more f
 $ npm install --save image-type
 ```
 
-```sh
-$ bower install --save image-type
-```
-
-```sh
-$ component install sindresorhus/image-type
-```
-
 
 ## Usage
 
@@ -89,13 +81,13 @@ $ npm install --global image-type
 ```sh
 $ image-type --help
 
-Usage
-  $ cat <filename> | image-type
-  $ image-type <filename>
+  Usage
+    image-type <filename>
+    cat <filename> | image-type
 
-Example
-  $ cat unicorn.png | image-type
-  png
+  Example
+    cat unicorn.png | image-type
+    png
 ```
 
 
