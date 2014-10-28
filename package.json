@@ -57,7 +57,8 @@
     "is-png": "^1.0.0",
     "is-psd": "^1.0.0",
     "is-tif": "^1.0.0",
-    "is-webp": "^1.0.0"
+    "is-webp": "^1.0.0",
+    "meow": "^2.0.0"
   },
   "devDependencies": {
     "mocha": "*",
