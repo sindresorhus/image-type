@@ -22,7 +22,7 @@ var imageType = require('image-type');
 var buffer = readChunk.sync('unicorn.png', 0, 12);
 
 imageType(buffer);
-//=> png
+//=> {ext: 'png', mime: 'image/png'}
 ```
 
 or from a remote location:
@@ -36,7 +36,7 @@ http.get(url, function (res) {
 	res.once('data', function (chunk) {
 		res.destroy();
 		console.log(imageType(chunk));
-		//=> gif
+		//=> {ext: 'gif', mime: 'image/gif'}
 	});
 });
 ```
@@ -50,7 +50,7 @@ xhr.responseType = 'arraybuffer';
 
 xhr.onload = function () {
 	imageType(new Uint8Array(this.response));
-	//=> png
+	//=> {ext: 'png', mime: 'image/png'}
 };
 
 xhr.send();
