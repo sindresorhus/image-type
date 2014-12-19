@@ -61,9 +61,10 @@ xhr.send();
 
 ### imageType(buffer)
 
-Returns: [`png`](https://github.com/sindresorhus/is-png), [`jpg`](https://github.com/sindresorhus/is-jpg), [`gif`](https://github.com/sindresorhus/is-gif), [`webp`](https://github.com/sindresorhus/is-webp), [`tif`](https://github.com/sindresorhus/is-tif), [`bmp`](https://github.com/sindresorhus/is-bmp), [`jxr`](https://github.com/sindresorhus/is-jxr), [`psd`](https://github.com/sindresorhus/is-psd), `false`
+Returns an object (or `null` when no match) with:
 
-*SVG isn't included as it requires the whole file to be read, but you can get it [here](https://github.com/sindresorhus/is-svg).*
+- `ext` - one of the [supported file types](#supported-file-types)
+- `mime` - the [MIME type](http://en.wikipedia.org/wiki/Internet_media_type)
 
 #### buffer
 
@@ -89,6 +90,20 @@ $ image-type --help
     cat unicorn.png | image-type
     png
 ```
+
+
+## Supported file types
+
+- `jpg`
+- `png`
+- `gif`
+- `webp`
+- `tif`
+- `bmp`
+- `jxr`
+- `psd`
+
+*SVG isn't included as it requires the whole file to be read, but you can get it [here](https://github.com/sindresorhus/is-svg).*
 
 
 ## License
