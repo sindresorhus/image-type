@@ -51,7 +51,7 @@
   ],
   "dependencies": {
     "file-type": "^2.0.0",
-    "meow": "^2.0.0"
+    "meow": "^3.0.0"
   },
   "devDependencies": {
     "mocha": "*",
