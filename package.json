@@ -7,11 +7,9 @@
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
-  "bin": {
-    "image-type": "cli.js"
-  },
+  "bin": "cli.js",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -23,6 +21,9 @@
     "cli.js"
   ],
   "keywords": [
+    "cli-app",
+    "cli",
+    "bin",
     "image",
     "img",
     "pic",
@@ -36,8 +37,6 @@
     "binary",
     "buffer",
     "uint8array",
-    "cli",
-    "bin",
     "png",
     "jpg",
     "jpeg",
