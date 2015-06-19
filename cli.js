@@ -13,7 +13,7 @@ var cli = meow({
 		'Example',
 		'  image-type < unicorn.png',
 		'  png'
-	].join('\n')
+	]
 });
 
 function init(data) {
