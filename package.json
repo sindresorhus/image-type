@@ -9,21 +9,16 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "bin": "cli.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "xo && ava"
   },
   "files": [
-    "index.js",
-    "cli.js"
+    "index.js"
   ],
   "keywords": [
-    "cli-app",
-    "cli",
-    "bin",
     "image",
     "img",
     "pic",
@@ -49,11 +44,11 @@
     "mime"
   ],
   "dependencies": {
-    "file-type": "^3.0.0",
-    "meow": "^3.3.0"
+    "file-type": "^4.1.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "read-chunk": "^1.0.0"
+    "ava": "*",
+    "read-chunk": "^2.0.0",
+    "xo": "*"
   }
 }

@@ -1,19 +1,18 @@
 'use strict';
-var fileType = require('file-type');
+const fileType = require('file-type');
 
-module.exports = function (buf) {
-	var imageExts = [
-		'jpg',
-		'png',
-		'gif',
-		'webp',
-		'tif',
-		'bmp',
-		'jxr',
-		'psd'
-	];
+const imageExts = new Set([
+	'jpg',
+	'png',
+	'gif',
+	'webp',
+	'tif',
+	'bmp',
+	'jxr',
+	'psd'
+]);
 
-	var ret = fileType(buf);
-
-	return imageExts.indexOf(ret && ret.ext) !== -1 ? ret : null;
+module.exports = input => {
+	const ret = fileType(input);
+	return imageExts.has(ret && ret.ext) ? ret : null;
 };

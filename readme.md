@@ -2,12 +2,12 @@
 
 > Detect the image type of a Buffer/Uint8Array
 
-See the [file-type](https://github.com/sindresorhus/file-type) module for more file types.
+See the [`file-type`](https://github.com/sindresorhus/file-type) module for more file types and a CLI.
 
 
 ## Install
 
-```sh
+```
 $ npm install --save image-type
 ```
 
@@ -17,23 +17,23 @@ $ npm install --save image-type
 ##### Node.js
 
 ```js
-var readChunk = require('read-chunk'); // npm install read-chunk
-var imageType = require('image-type');
-var buffer = readChunk.sync('unicorn.png', 0, 12);
+const readChunk = require('read-chunk'); // npm install read-chunk
+const imageType = require('image-type');
+const buffer = readChunk.sync('unicorn.png', 0, 12);
 
 imageType(buffer);
 //=> {ext: 'png', mime: 'image/png'}
 ```
 
-or from a remote location:
+Or from a remote location:
 
 ```js
-var http = require('http');
-var imageType = require('image-type');
-var url = 'http://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif';
+const http = require('http');
+const imageType = require('image-type');
+const url = 'http://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif';
 
-http.get(url, function (res) {
-	res.once('data', function (chunk) {
+http.get(url, res => {
+	res.once('data', chunk => {
 		res.destroy();
 		console.log(imageType(chunk));
 		//=> {ext: 'gif', mime: 'image/gif'}
@@ -44,11 +44,11 @@ http.get(url, function (res) {
 ##### Browser
 
 ```js
-var xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 xhr.open('GET', 'unicorn.png');
 xhr.responseType = 'arraybuffer';
 
-xhr.onload = function () {
+xhr.onload = () => {
 	imageType(new Uint8Array(this.response));
 	//=> {ext: 'png', mime: 'image/png'}
 };
@@ -59,37 +59,20 @@ xhr.send();
 
 ## API
 
-### imageType(buffer)
+### imageType(input)
 
-Returns an object (or `null` when no match) with:
+Returns an `Object` with:
 
-- `ext` - one of the [supported file types](#supported-file-types)
-- `mime` - the [MIME type](http://en.wikipedia.org/wiki/Internet_media_type)
+- `ext` - One of the [supported file types](#supported-file-types)
+- `mime` - The [MIME type](http://en.wikipedia.org/wiki/Internet_media_type)
 
-#### buffer
+Or `null` when no match.
 
-Type: `buffer` *(Node.js)*, `uint8array`
+#### input
+
+Type: `Buffer` `Uint8Array`
 
 It only needs the first 12 bytes.
-
-
-## CLI
-
-```sh
-$ npm install --global image-type
-```
-
-```sh
-$ image-type --help
-
-  Usage
-    image-type <filename>
-    cat <filename> | image-type
-
-  Example
-    cat unicorn.png | image-type
-    png
-```
 
 
 ## Supported file types
@@ -108,4 +91,4 @@ $ image-type --help
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
