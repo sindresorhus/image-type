@@ -8,7 +8,7 @@ See the [`file-type`](https://github.com/sindresorhus/file-type) module for more
 ## Install
 
 ```
-$ npm install --save image-type
+$ npm install image-type
 ```
 
 
@@ -17,8 +17,9 @@ $ npm install --save image-type
 ##### Node.js
 
 ```js
-const readChunk = require('read-chunk'); // npm install read-chunk
+const readChunk = require('read-chunk');
 const imageType = require('image-type');
+
 const buffer = readChunk.sync('unicorn.png', 0, 12);
 
 imageType(buffer);
@@ -30,11 +31,13 @@ Or from a remote location:
 ```js
 const http = require('http');
 const imageType = require('image-type');
-const url = 'http://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif';
 
-http.get(url, res => {
-	res.once('data', chunk => {
-		res.destroy();
+const url = 'https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif';
+
+http.get(url, response => {
+	response.on('readable', () => {
+		const chunk = response.read(imageType.minimumBytes);
+		response.destroy();
 		console.log(imageType(chunk));
 		//=> {ext: 'gif', mime: 'image/gif'}
 	});
@@ -66,11 +69,11 @@ Returns an `Object` with:
 - `ext` - One of the [supported file types](#supported-file-types)
 - `mime` - The [MIME type](http://en.wikipedia.org/wiki/Internet_media_type)
 
-Or `null` when no match.
+Or `null` when there is no match.
 
 #### input
 
-Type: `Buffer` `Uint8Array`
+Type: `Buffer | Uint8Array`
 
 It only needs the first `.minimumBytes` bytes.
 
@@ -79,6 +82,7 @@ It only needs the first `.minimumBytes` bytes.
 Type: `number`
 
 The minimum amount of bytes needed to detect a file type. Currently, it's 4100 bytes, but it can change, so don't hardcode it.
+
 
 ## Supported file types
 
