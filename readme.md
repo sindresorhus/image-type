@@ -72,19 +72,34 @@ Or `null` when no match.
 
 Type: `Buffer` `Uint8Array`
 
-It only needs the first 12 bytes.
+It only needs the first `.minimumBytes` bytes.
 
+### imageType.minimumBytes
+
+Type: `number`
+
+The minimum amount of bytes needed to detect a file type. Currently, it's 4100 bytes, but it can change, so don't hardcode it.
 
 ## Supported file types
 
-- `jpg`
-- `png`
-- `gif`
-- `webp`
-- `tif`
-- `bmp`
-- `jxr`
-- `psd`
+- [`jpg`](https://en.wikipedia.org/wiki/JPEG)
+- [`png`](https://en.wikipedia.org/wiki/Portable_Network_Graphics)
+- [`gif`](https://en.wikipedia.org/wiki/GIF)
+- [`webp`](https://en.wikipedia.org/wiki/WebP)
+- [`flif`](https://en.wikipedia.org/wiki/Free_Lossless_Image_Format)
+- [`cr2`](https://fileinfo.com/extension/cr2)
+- [`tif`](https://en.wikipedia.org/wiki/Tagged_Image_File_Format)
+- [`bmp`](https://en.wikipedia.org/wiki/BMP_file_format)
+- [`jxr`](https://en.wikipedia.org/wiki/JPEG_XR)
+- [`psd`](https://en.wikipedia.org/wiki/Adobe_Photoshop#File_format)
+- [`ico`](https://en.wikipedia.org/wiki/ICO_(file_format))
+- [`bpg`](https://bellard.org/bpg/)
+- [`jp2`](https://en.wikipedia.org/wiki/JPEG_2000) - JPEG 2000
+- [`jpm`](https://en.wikipedia.org/wiki/JPEG_2000) - JPEG 2000
+- [`jpx`](https://en.wikipedia.org/wiki/JPEG_2000) - JPEG 2000
+- [`heic`](https://nokiatech.github.io/heif/technical.html)
+- [`cur`](https://en.wikipedia.org/wiki/ICO_(file_format))
+- [`dcm`](https://en.wikipedia.org/wiki/DICOM#Data_format) - DICOM Image File
 
 *SVG isn't included as it requires the whole file to be read, but you can get it [here](https://github.com/sindresorhus/is-svg).*
 

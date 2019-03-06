@@ -6,13 +6,28 @@ const imageExts = new Set([
 	'png',
 	'gif',
 	'webp',
+	'flif',
+	'cr2',
 	'tif',
 	'bmp',
 	'jxr',
-	'psd'
+	'psd',
+	'ico',
+	'bpg',
+	'jp2',
+	'jpm',
+	'jpx',
+	'heic',
+	'cur',
+	'dcm'
 ]);
 
-module.exports = input => {
+const imageType = input => {
 	const ret = fileType(input);
 	return imageExts.has(ret && ret.ext) ? ret : null;
 };
+
+module.exports = imageType;
+module.exports.default = imageType;
+
+Object.defineProperty(imageType, 'minimumBytes', {value: fileType.minimumBytes});

@@ -1,10 +1,10 @@
 import test from 'ava';
 import readChunk from 'read-chunk';
-import m from './';
+import imageType from '.';
 
-const check = filename => m(readChunk.sync(filename, 0, 12)).ext;
+const check = filename => imageType(readChunk.sync(filename, 0, 12)).ext;
 
-test(t => {
+test('main', t => {
 	t.is(check('fixture.png'), 'png');
 	t.is(check('fixture.psd'), 'psd');
 });
