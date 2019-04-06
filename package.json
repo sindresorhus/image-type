@@ -1,6 +1,6 @@
 {
 	"name": "image-type",
-	"version": "4.0.0",
+	"version": "4.1.0",
 	"description": "Detect the image type of a Buffer/Uint8Array",
 	"license": "MIT",
 	"repository": "sindresorhus/image-type",
