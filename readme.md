@@ -29,17 +29,17 @@ imageType(buffer);
 Or from a remote location:
 
 ```js
-const http = require('http');
+const https = require('https');
 const imageType = require('image-type');
 
-const url = 'https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif';
+const url = 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg';
 
-http.get(url, response => {
+https.get(url, response => {
 	response.on('readable', () => {
 		const chunk = response.read(imageType.minimumBytes);
 		response.destroy();
 		console.log(imageType(chunk));
-		//=> {ext: 'gif', mime: 'image/gif'}
+		//=> {ext: 'jpg', mime: 'image/jpeg'}
 	});
 });
 ```
