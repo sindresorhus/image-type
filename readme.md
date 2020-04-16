@@ -1,16 +1,14 @@
-# image-type [![Build Status](https://travis-ci.org/sindresorhus/image-type.svg?branch=master)](https://travis-ci.org/sindresorhus/image-type)
+# image-type [![Build Status](https://travis-ci.com/sindresorhus/image-type.svg?branch=master)](https://travis-ci.com/sindresorhus/image-type)
 
 > Detect the image type of a Buffer/Uint8Array
 
 See the [`file-type`](https://github.com/sindresorhus/file-type) module for more file types and a CLI.
-
 
 ## Install
 
 ```
 $ npm install image-type
 ```
-
 
 ## Usage
 
@@ -59,7 +57,6 @@ xhr.onload = () => {
 xhr.send();
 ```
 
-
 ## API
 
 ### imageType(input)
@@ -67,7 +64,7 @@ xhr.send();
 Returns an `Object` with:
 
 - `ext` - One of the [supported file types](#supported-file-types)
-- `mime` - The [MIME type](http://en.wikipedia.org/wiki/Internet_media_type)
+- `mime` - The [MIME type](https://en.wikipedia.org/wiki/Internet_media_type)
 
 Or `null` when there is no match.
 
@@ -82,7 +79,6 @@ It only needs the first `.minimumBytes` bytes.
 Type: `number`
 
 The minimum amount of bytes needed to detect a file type. Currently, it's 4100 bytes, but it can change, so don't hardcode it.
-
 
 ## Supported file types
 
@@ -106,8 +102,3 @@ The minimum amount of bytes needed to detect a file type. Currently, it's 4100 b
 - [`dcm`](https://en.wikipedia.org/wiki/DICOM#Data_format) - DICOM Image File
 
 *SVG isn't included as it requires the whole file to be read, but you can get it [here](https://github.com/sindresorhus/is-svg).*
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
