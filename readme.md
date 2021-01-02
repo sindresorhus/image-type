@@ -1,4 +1,4 @@
-# image-type [![Build Status](https://travis-ci.com/sindresorhus/image-type.svg?branch=master)](https://travis-ci.com/sindresorhus/image-type)
+# image-type
 
 > Detect the image type of a Buffer/Uint8Array
 
