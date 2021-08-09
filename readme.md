@@ -6,8 +6,8 @@ See the [`file-type`](https://github.com/sindresorhus/file-type) module for more
 
 ## Install
 
-```
-$ npm install image-type
+```sh
+npm install image-type
 ```
 
 ## Usage
@@ -15,29 +15,31 @@ $ npm install image-type
 ##### Node.js
 
 ```js
-const readChunk = require('read-chunk');
-const imageType = require('image-type');
+import {readChunk} from 'read-chunk';
+import imageType from 'image-type';
 
-const buffer = readChunk.sync('unicorn.png', 0, 12);
+const buffer = await readChunk('unicorn.png', {length: 12});
 
-imageType(buffer);
+await imageType(buffer);
 //=> {ext: 'png', mime: 'image/png'}
 ```
 
 Or from a remote location:
 
 ```js
-const https = require('https');
-const imageType = require('image-type');
+import https from 'node:https';
+import imageType from 'image-type';
 
 const url = 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg';
 
 https.get(url, response => {
 	response.on('readable', () => {
-		const chunk = response.read(imageType.minimumBytes);
-		response.destroy();
-		console.log(imageType(chunk));
-		//=> {ext: 'jpg', mime: 'image/jpeg'}
+		(async () => {
+			const chunk = response.read(imageType.minimumBytes);
+			response.destroy();
+			console.log(await imageType(chunk));
+			//=> {ext: 'jpg', mime: 'image/jpeg'}
+		})();
 	});
 });
 ```
@@ -50,8 +52,10 @@ xhr.open('GET', 'unicorn.png');
 xhr.responseType = 'arraybuffer';
 
 xhr.onload = () => {
-	imageType(new Uint8Array(this.response));
-	//=> {ext: 'png', mime: 'image/png'}
+	(async () => {
+		await imageType(new Uint8Array(this.response));
+		//=> {ext: 'png', mime: 'image/png'}
+	})();
 };
 
 xhr.send();
@@ -61,12 +65,12 @@ xhr.send();
 
 ### imageType(input)
 
-Returns an `Object` with:
+Returns an `Promise<object>` with:
 
 - `ext` - One of the [supported file types](#supported-file-types)
 - `mime` - The [MIME type](https://en.wikipedia.org/wiki/Internet_media_type)
 
-Or `null` when there is no match.
+Or `undefined` when there is no match.
 
 #### input
 
@@ -74,7 +78,7 @@ Type: `Buffer | Uint8Array`
 
 It only needs the first `.minimumBytes` bytes.
 
-### imageType.minimumBytes
+### minimumBytes
 
 Type: `number`
 

@@ -1,80 +1,75 @@
-/// <reference types="node"/>
+import {Buffer} from 'node:buffer';
 
-declare namespace imageType {
-	type ImageType =
-		| 'jpg'
-		| 'png'
-		| 'gif'
-		| 'webp'
-		| 'flif'
-		| 'cr2'
-		| 'tif'
-		| 'bmp'
-		| 'jxr'
-		| 'psd'
-		| 'ico'
-		| 'bpg'
-		| 'jp2'
-		| 'jpm'
-		| 'jpx'
-		| 'heic'
-		| 'cur'
-		| 'dcm';
+export type ImageFileExtension =
+	| 'jpg'
+	| 'png'
+	| 'gif'
+	| 'webp'
+	| 'flif'
+	| 'cr2'
+	| 'tif'
+	| 'bmp'
+	| 'jxr'
+	| 'psd'
+	| 'ico'
+	| 'bpg'
+	| 'jp2'
+	| 'jpm'
+	| 'jpx'
+	| 'heic'
+	| 'cur'
+	| 'dcm';
 
-	interface ImageTypeResult {
-		/**
-		One of the supported [file types](https://github.com/sindresorhus/image-type#supported-file-types).
-		*/
-		ext: ImageType;
+export interface ImageTypeResult {
+	/**
+	One of the supported [file types](https://github.com/sindresorhus/image-type#supported-file-types).
+	*/
+	ext: ImageFileExtension;
 
-		/**
-		The detected [MIME type](https://en.wikipedia.org/wiki/Internet_media_type).
-		*/
-		mime: string;
-	}
+	/**
+	The detected [MIME type](https://en.wikipedia.org/wiki/Internet_media_type).
+	*/
+	mime: string;
 }
 
-declare const imageType: {
-	/**
-	Detect the image type of a `Buffer`/`Uint8Array`.
+/**
+Detect the image type of a `Buffer`/`Uint8Array`.
 
-	@param input - Input to examine to determine the file type. It only needs the first `.minimumBytes` bytes.
+@param input - Input for which to determine the file type. It only needs the first `.minimumBytes` bytes.
 
-	@example
-	```
-	import readChunk = require('read-chunk');
-	import imageType = require('image-type');
+@example
+```
+import {readChunk} from 'read-chunk';
+import imageType from 'image-type';
 
-	const buffer = readChunk.sync('unicorn.png', 0, 12);
+const buffer = await readChunk('unicorn.png', {length: 12});
 
-	imageType(buffer);
-	//=> {ext: 'png', mime: 'image/png'}
+await imageType(buffer);
+//=> {ext: 'png', mime: 'image/png'}
+```
 
+@example
+```
+import https from 'node:https';
+import imageType from 'image-type';
 
-	// Or from a remote location:
-	import * as http from 'http';
+const url = 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg';
 
-	const url = 'https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif';
-
-	http.get(url, response => {
-		response.on('readable', () => {
+https.get(url, response => {
+	response.on('readable', () => {
+		(async () => {
 			const chunk = response.read(imageType.minimumBytes);
 			response.destroy();
-			console.log(imageType(chunk));
-			//=> {ext: 'gif', mime: 'image/gif'}
-		});
+			console.log(await imageType(chunk));
+			//=> {ext: 'jpg', mime: 'image/jpeg'}
+		})();
 	});
-	```
-	*/
-	(input: Buffer | Uint8Array): imageType.ImageTypeResult | null;
+});
+```
+*/
+export default function imageType(input: Buffer | Uint8Array): Promise<ImageTypeResult | undefined>;
 
-	/**
-	The minimum amount of bytes needed to detect a file type. Currently, it's 4100 bytes, but it can change, so don't hard-code it.
-	*/
-	readonly minimumBytes: number;
-
-	// TODO: Remove this for the next major release
-	default: typeof imageType;
-};
-
-export = imageType;
+/**
+The minimum amount of bytes needed to detect a file type. Currently, it's 4100 bytes, but it can change, so don't hard-code it.
+*/
+export const minimumBytes: number;

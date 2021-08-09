@@ -1,7 +1,6 @@
-'use strict';
-const fileType = require('file-type');
+import {fileTypeFromBuffer} from 'file-type';
 
-const imageExts = new Set([
+const imageExtensions = new Set([
 	'jpg',
 	'png',
 	'gif',
@@ -19,16 +18,12 @@ const imageExts = new Set([
 	'jpx',
 	'heic',
 	'cur',
-	'dcm'
+	'dcm',
 ]);
 
-const imageType = input => {
-	const ret = fileType(input);
-	return imageExts.has(ret && ret.ext) ? ret : null;
-};
+export default async function imageType(input) {
+	const result = await fileTypeFromBuffer(input);
+	return imageExtensions.has(result?.ext) && result;
+}
 
-module.exports = imageType;
-// TODO: Remove this for the next major release
-module.exports.default = imageType;
-
-Object.defineProperty(imageType, 'minimumBytes', {value: fileType.minimumBytes});
+export const minimumBytes = 4100;

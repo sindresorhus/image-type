@@ -4,13 +4,17 @@
 	"description": "Detect the image type of a Buffer/Uint8Array",
 	"license": "MIT",
 	"repository": "sindresorhus/image-type",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
+	"exports": "./index.js",
+	"types": "./index.d.ts",
 	"engines": {
-		"node": ">=6"
+		"node": ">=14.16"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -21,8 +25,6 @@
 	],
 	"keywords": [
 		"image",
-		"img",
-		"pic",
 		"picture",
 		"photo",
 		"type",
@@ -45,13 +47,13 @@
 		"mime"
 	],
 	"dependencies": {
-		"file-type": "^10.10.0"
+		"file-type": "^17.1.4"
 	},
 	"devDependencies": {
-		"@types/node": "^11.13.0",
-		"ava": "^1.4.1",
-		"read-chunk": "^3.2.0",
-		"tsd": "^0.7.2",
-		"xo": "^0.24.0"
+		"@types/node": "^18.6.2",
+		"ava": "^4.3.1",
+		"read-chunk": "^4.0.2",
+		"tsd": "^0.22.0",
+		"xo": "^0.51.0"
 	}
 }

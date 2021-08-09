@@ -1,10 +1,13 @@
 import test from 'ava';
-import readChunk from 'read-chunk';
-import imageType from '.';
+import {readChunkSync} from 'read-chunk';
+import imageType, {minimumBytes} from './index.js';
 
-const check = filename => imageType(readChunk.sync(filename, 0, 12)).ext;
+const check = async filename => {
+	const {ext} = await imageType(readChunkSync(filename, {length: minimumBytes}));
+	return ext;
+};
 
-test('main', t => {
-	t.is(check('fixture.png'), 'png');
-	t.is(check('fixture.psd'), 'psd');
+test('main', async t => {
+	t.is(await check('fixture.png'), 'png');
+	t.is(await check('fixture.psd'), 'psd');
 });
