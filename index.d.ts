@@ -18,7 +18,8 @@ export type ImageFileExtension =
 	| 'jpx'
 	| 'heic'
 	| 'cur'
-	| 'dcm';
+	| 'dcm'
+	| 'avif';
 
 export interface ImageTypeResult {
 	/**

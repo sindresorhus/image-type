@@ -19,6 +19,7 @@ const imageExtensions = new Set([
 	'heic',
 	'cur',
 	'dcm',
+	'avif',
 ]);
 
 export default async function imageType(input) {

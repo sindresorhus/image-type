@@ -10,4 +10,5 @@ const check = async filename => {
 test('main', async t => {
 	t.is(await check('fixture.png'), 'png');
 	t.is(await check('fixture.psd'), 'psd');
+	t.is(await check('fixture.avif'), 'avif');
 });
