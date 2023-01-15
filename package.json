@@ -47,13 +47,13 @@
 		"mime"
 	],
 	"dependencies": {
-		"file-type": "^17.1.4"
+		"file-type": "^18.1.0"
 	},
 	"devDependencies": {
-		"@types/node": "^18.6.2",
-		"ava": "^4.3.1",
-		"read-chunk": "^4.0.2",
-		"tsd": "^0.22.0",
-		"xo": "^0.51.0"
+		"@types/node": "^18.11.18",
+		"ava": "^5.1.0",
+		"read-chunk": "^4.0.3",
+		"tsd": "^0.25.0",
+		"xo": "^0.53.1"
 	}
 }

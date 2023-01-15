@@ -16,9 +16,9 @@ npm install image-type
 
 ```js
 import {readChunk} from 'read-chunk';
-import imageType from 'image-type';
+import imageType, {minimumBytes} from 'image-type';
 
-const buffer = await readChunk('unicorn.png', {length: 12});
+const buffer = await readChunk('unicorn.png', {length: minimumBytes});
 
 await imageType(buffer);
 //=> {ext: 'png', mime: 'image/png'}
@@ -28,14 +28,14 @@ Or from a remote location:
 
 ```js
 import https from 'node:https';
-import imageType from 'image-type';
+import imageType, {minimumBytes} from 'image-type';
 
 const url = 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg';
 
 https.get(url, response => {
 	response.on('readable', () => {
 		(async () => {
-			const chunk = response.read(imageType.minimumBytes);
+			const chunk = response.read(minimumBytes);
 			response.destroy();
 			console.log(await imageType(chunk));
 			//=> {ext: 'jpg', mime: 'image/jpeg'}
@@ -76,7 +76,7 @@ Or `undefined` when there is no match.
 
 Type: `Buffer | Uint8Array`
 
-It only needs the first `.minimumBytes` bytes.
+It only needs the first `minimumBytes` amount of bytes.
 
 ### minimumBytes
 
