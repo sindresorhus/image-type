@@ -1,5 +1,3 @@
-import {type Buffer} from 'node:buffer';
-
 export type ImageFileExtension =
 	| 'jpg'
 	| 'png'
@@ -34,7 +32,7 @@ export type ImageTypeResult = {
 };
 
 /**
-Detect the image type of a `Buffer`/`Uint8Array`.
+Detect the image type of an `ArrayBuffer`/`Uint8Array`.
 
 @param input - Input for which to determine the file type. It only needs the first `minimumBytes` amount of bytes.
 
@@ -68,8 +66,7 @@ https.get(url, response => {
 });
 ```
 */
-// eslint-disable-next-line @typescript-eslint/ban-types -- TODO: Switch to Uint8Array only
-export default function imageType(input: Buffer | Uint8Array): Promise<ImageTypeResult | undefined>;
+export default function imageType(input: ArrayBuffer | Uint8Array): Promise<ImageTypeResult | undefined>;
 
 /**
 The minimum amount of bytes needed to detect a file type. Currently, it's 4100 bytes, but it can change, so don't hard-code it.
