@@ -68,6 +68,7 @@ https.get(url, response => {
 });
 ```
 */
+// eslint-disable-next-line @typescript-eslint/ban-types -- TODO: Switch to Uint8Array only
 export default function imageType(input: Buffer | Uint8Array): Promise<ImageTypeResult | undefined>;
 
 /**
