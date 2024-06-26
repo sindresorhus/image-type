@@ -15,7 +15,7 @@
 	"types": "./index.d.ts",
 	"sideEffects": false,
 	"engines": {
-		"node": ">=14.16"
+		"node": ">=18"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -48,7 +48,7 @@
 		"mime"
 	],
 	"dependencies": {
-		"file-type": "^18.1.0"
+		"file-type": "^19.0.0"
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.18",
