@@ -1,6 +1,6 @@
 # image-type
 
-> Detect the image type of a Buffer/Uint8Array
+> Detect the image type of an ArrayBuffer/Uint8Array
 
 See the [`file-type`](https://github.com/sindresorhus/file-type) module for more file types and a CLI.
 
@@ -74,7 +74,7 @@ Or `undefined` when there is no match.
 
 #### input
 
-Type: `Buffer | Uint8Array`
+Type: `ArrayBuffer | Uint8Array`
 
 It only needs the first `minimumBytes` amount of bytes.
 

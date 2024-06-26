@@ -1,7 +1,7 @@
 {
 	"name": "image-type",
 	"version": "5.2.0",
-	"description": "Detect the image type of a Buffer/Uint8Array",
+	"description": "Detect the image type of an ArrayBuffer/Uint8Array",
 	"license": "MIT",
 	"repository": "sindresorhus/image-type",
 	"funding": "https://github.com/sponsors/sindresorhus",
