@@ -24,7 +24,7 @@ const imageExtensions = new Set([
 
 export default async function imageType(input) {
 	const result = await fileTypeFromBuffer(input);
-	return imageExtensions.has(result?.ext) && result;
+	return result && imageExtensions.has(result.ext) ? result : undefined;
 }
 
 export const minimumBytes = 4100;
