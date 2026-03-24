@@ -1,3 +1,4 @@
+// eslint-disable-next-line @stylistic/operator-linebreak
 export type ImageFileExtension =
 	| 'jpg'
 	| 'png'
